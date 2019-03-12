@@ -1,7 +1,9 @@
 package com.henkel.erp.user.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class UserDetails implements Serializable {
 	
@@ -16,6 +18,8 @@ public class UserDetails implements Serializable {
 	private Integer roleId;
 	private String userType;
 	private String companyId;
+	private boolean isUserFound;
+	private List<LandingPageModule> moduleList=new ArrayList<>();
 	
 	
 	public String getEmailId() {
@@ -85,7 +89,17 @@ public class UserDetails implements Serializable {
 		this.companyId = companyId;
 	}
 	
-	
-	
+	public boolean isUserFound() {
+		return isUserFound;
+	}
+	public void setUserFound(boolean isUserFound) {
+		this.isUserFound = isUserFound;
+	}
+	public List<LandingPageModule> getModuleList() {
+		return moduleList;
+	}
+	public void setModuleList(List<LandingPageModule> moduleList) {
+		this.moduleList = moduleList;
+	}
 
 }

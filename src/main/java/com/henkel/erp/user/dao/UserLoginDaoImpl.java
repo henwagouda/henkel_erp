@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
+import java.sql.PreparedStatement;
 import java.sql.Types;
 import java.util.*;
 import com.henkel.erp.user.mapper.UserDetailRowMapper;
@@ -53,6 +54,7 @@ public class UserLoginDaoImpl implements UserLoginDao{
 	@SuppressWarnings("unchecked")
 	@Override
 	public UserDetails validateUserByEmailId(String emailId) {
+		
 		SimpleJdbcCall validateEmailTemplate=new SimpleJdbcCall(this.getDataSource()).
 		withProcedureName("m_user_CheckUserByEmail").
 		withoutProcedureColumnMetaDataAccess().
